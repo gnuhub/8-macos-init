@@ -15,16 +15,18 @@ function pkgs.dowload()
 
 function xcode.install()
 {
-    # wget https://download.sf.net/gnuhub/xcode_cli_tools_macos10.13_for_xcode9.4.1.pkg
-    export __CFPREFERENCES_AVOID_DAEMON=1
+    if [ ! -d /Applications/Xcode.app ];then
+        # wget https://download.sf.net/gnuhub/xcode_cli_tools_macos10.13_for_xcode9.4.1.pkg
+        export __CFPREFERENCES_AVOID_DAEMON=1
 
-    sudo installer -pkg 'xcode9.4.1.pkg' -target /
+        sudo installer -pkg 'xcode9.4.1.pkg' -target /
 
-    curl curl -fsSL https://raw.githubusercontent.com/gnuhub/8_macos_init/master/agree_xcode_licence.sh > agree_xcode_licence.sh
-    chmod +x agree_xcode_licence.sh
-    ./agree_xcode_licence.sh
+        curl curl -fsSL https://raw.githubusercontent.com/gnuhub/8_macos_init/master/agree_xcode_licence.sh > agree_xcode_licence.sh
+        chmod +x agree_xcode_licence.sh
+        ./agree_xcode_licence.sh
 
-    sudo installer -pkg 'xcode_cli_tools_macos10.13_for_xcode9.4.1.pkg' -target /
+        sudo installer -pkg 'xcode_cli_tools_macos10.13_for_xcode9.4.1.pkg' -target /
+    fi
 }
 
 function homebrew.install()
