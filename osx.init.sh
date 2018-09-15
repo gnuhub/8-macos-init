@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 # https://developer.apple.com/download/more/
 if [ ! -f 'xcode9.4.1.pkg' ];then
 	wget https://download.sf.net/gnuhub/xcode9.4.1.pkg
@@ -31,5 +32,6 @@ brew update
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 export HOMEBREW_NO_AUTO_UPDATE=true
+brew install wget
 brew install gitlab-runner
 brew services start gitlab-runner
