@@ -12,3 +12,7 @@ fi
 /usr/local/bin/gitlab-runner --version
 
 launchctl list | grep gitlab-runner
+
+if [ ! -f /Users/stallman/Library/LaunchAgents/afy.gitlab-runner.plist ];then
+    curl -fsSL https://raw.githubusercontent.com/gnuhub/8-macos-init/master/afu.gitlab-runner.plist > /Users/stallman/Library/LaunchAgents/afy.gitlab-runner.plist
+fi
