@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 if [ ! -d /usr/local/bin/ ];then
     mkdir -p /usr/local/bin/
 fi
