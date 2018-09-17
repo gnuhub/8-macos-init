@@ -22,7 +22,7 @@ fi
 launchctl list | grep gitlab-runner
 
 if [ ! -f ${HOME}/Library/LaunchAgents/afu.net.gitlab-runner.plist ];then
-    curl -fsSL https://raw.githubusercontent.com/gnuhub/8-macos-init/master/afu.net.gitlab-runner > ${HOME}/Library/LaunchAgents/afu.net.gitlab-runner.plist
+    curl -fsSL https://raw.githubusercontent.com/gnuhub/8-macos-init/master/afu.net.gitlab-runner.plist > ${HOME}/Library/LaunchAgents/afu.net.gitlab-runner.plist
 fi
 
-launchctl load -w afu.net.gitlab-runner
+launchctl load -w ${HOME}/Library/LaunchAgents/afu.net.gitlab-runner.plist
